@@ -1,13 +1,12 @@
 name: k8s-golang
-version: v1
-codeRepo: https://github.com/fhquthpdw/k8s-golang.git # code repo
-dockerImageRepoCI: registry.iherb.local.zdc # local domain
-dockerImageRepoCD: registry-svc.daochun.svc.cluster.local # k8s cluster domain
-
+version: v3
+codeRepo: https://github.com/fhquthpdw/k8s-golang.git
+dockerImageRepoCI: registry.iherb.local.zdc
+dockerImageRepoCD: registry-svc.daochun.svc.cluster.local
 tasks:
-  - name: prebuild
-    command:
-      - echo "prebuild ..."
-  - name: build
-    command:
-      - echo "build ..."
+- name: prebuild
+  command:
+  - echo "prebuild ..."
+- name: build
+  command:
+  - echo "build ..."
