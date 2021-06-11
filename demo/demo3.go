@@ -4,6 +4,7 @@ func main() {
 	concurrency3()
 }
 
+// 解决map写冲突问题
 func concurrency3() {
 	for i := 0; i < 300; i++ {
 		wg.Add(1)

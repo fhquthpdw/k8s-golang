@@ -11,13 +11,14 @@ func main() {
 	concurrency6()
 }
 
+// 解决并发数量控制问题
 func concurrency6() {
 	var goroutineCnt int64 = 10
 	ctx := context.Background()
 	sema := semaphore.NewWeighted(goroutineCnt)
 
 	for i := 0; i < 300; i++ {
-		sema.Acquire(ctx, 1)
+		_ = sema.Acquire(ctx, 1)
 
 		go func(i int) {
 			defer sema.Release(1)
@@ -32,7 +33,7 @@ func concurrency6() {
 			}
 		}(i)
 	}
-	sema.Acquire(ctx, goroutineCnt)
+	_ = sema.Acquire(ctx, goroutineCnt)
 
 	printResult3()
 }

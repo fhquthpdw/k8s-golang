@@ -6,6 +6,7 @@ func main() {
 	concurrency4()
 }
 
+// 解决i++原子操作问题
 func concurrency4() {
 	for i := 0; i < 300; i++ {
 		wg.Add(1)

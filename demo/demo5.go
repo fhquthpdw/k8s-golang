@@ -6,6 +6,7 @@ func main() {
 	concurrency5()
 }
 
+// 解决闭包参数传递问题
 func concurrency5() {
 	for i := 0; i < 300; i++ {
 		wg.Add(1)

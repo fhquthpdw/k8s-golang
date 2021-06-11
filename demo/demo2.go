@@ -4,6 +4,7 @@ func main() {
 	concurrency2()
 }
 
+// 解决等待问题
 func concurrency2() {
 	// raise to 30
 	for i := 0; i < 3; i++ {

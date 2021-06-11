@@ -14,6 +14,7 @@ type returnResult struct {
 	err    error
 }
 
+// 生产与消费解偶问题
 func main() {
 	var ch = make(chan returnResult)
 
@@ -48,7 +49,7 @@ func concurrency7(ch chan returnResult, wg7 *sync.WaitGroup) {
 	sema := semaphore.NewWeighted(goroutineCnt)
 
 	for i := 0; i < 300; i++ {
-		sema.Acquire(ctx, 1)
+		_ = sema.Acquire(ctx, 1)
 
 		go func(i int) {
 			defer sema.Release(1)
@@ -62,6 +63,6 @@ func concurrency7(ch chan returnResult, wg7 *sync.WaitGroup) {
 		}(i)
 	}
 
-	sema.Acquire(ctx, goroutineCnt)
+	_ = sema.Acquire(ctx, goroutineCnt)
 	close(ch) // if close then deadlock will occurred
 }
