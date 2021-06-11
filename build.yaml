@@ -1,5 +1,5 @@
 name: k8s-golang
-version: v3
+version: v5
 codeRepo: https://github.com/fhquthpdw/k8s-golang.git
 dockerImageRepoCI: registry.iherb.local.zdc
 dockerImageRepoCD: registry-svc.daochun.svc.cluster.local
